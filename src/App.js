@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Button from './components/Button';
+import Text from './components/Text';
 
 function handleButtonClick() {
   alert('button clicked');
@@ -30,6 +31,7 @@ class App extends Component {
 						heading (possible values: true / false - default)
 						size (possible values: small / medium - default / large)
 				*/}
+        <Text heading size='large'>find me here</Text>
 
 
 

@@ -1,0 +1,26 @@
+h1.text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h2.text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+h3.text {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.text.large {
+  font-size: 24px;
+}
+
+.text.medium {
+  font-size: 16px;
+}
+
+.text.small {
+  font-size: 12px;
+}
