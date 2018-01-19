@@ -1,0 +1,19 @@
+.btn {
+  background: white;
+  color: black;
+  padding: 5px 20px;
+  border: 0;
+}
+
+.btn[disabled] {
+  background: grey;
+}
+
+.btn-primary {
+  background: deepskyblue;
+  color: white;
+}
+
+.btn-secondary {
+  border: 1px solid deepskyblue;
+}

@@ -1,4 +1,9 @@
 import React, {Component} from 'react';
+import Button from './components/Button';
+
+function handleButtonClick() {
+  alert('button clicked');
+}
 
 class App extends Component {
 	render() {
@@ -9,9 +14,12 @@ class App extends Component {
 						Button
 
 					Props:
-						type (possible values: primary - default / secondary / disabled / loading)
+						type (possible values: primary - default / secondary)
+            disabled
+            loadking
 						onButtonClick (function)
 				*/}
+        <Button type="primary" onButtonClick={handleButtonClick}>hello</Button>
 
 
 				{/*
