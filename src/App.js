@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Button from './components/Button';
 import Text from './components/Text';
+import Notification from './components/Notification';
 
 function handleButtonClick() {
   alert('button clicked');
@@ -42,6 +43,9 @@ class App extends Component {
 					Props:
 						type (possible values: success / danger / info - default)
 				*/}
+        <Notification type="danger">
+          check out this news
+        </Notification>
 
 
 
