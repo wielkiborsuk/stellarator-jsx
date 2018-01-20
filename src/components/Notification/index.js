@@ -15,7 +15,7 @@ function Notification({children, type}) {
 };
 
 Notification.propTypes = {
-  type: PropTypes.string
+  type: PropTypes.oneOf(['info', 'danger', 'success'])
 };
 
 Notification.defaultProps = {

@@ -14,7 +14,7 @@ function Button({children, type, disabled, loading, onButtonClick}) {
 };
 
 Button.propTypes = {
-  type: PropTypes.string,
+  type: PropTypes.oneOf(['primary', 'secondary']),
   disabled: PropTypes.bool,
   loading: PropTypes.bool,
   onButtonClick: PropTypes.func
