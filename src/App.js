@@ -2,9 +2,15 @@ import React, {Component} from 'react';
 import Button from './components/Button';
 import Text from './components/Text';
 import Notification from './components/Notification';
+import Input from './components/Input';
 
 function handleButtonClick() {
   alert('button clicked');
+}
+
+function changeHandler(event) {
+  var newValue = event.currentTarget.value;
+  console.log(`updating field value to ${newValue}`);
 }
 
 class App extends Component {
@@ -63,6 +69,7 @@ class App extends Component {
 						error (string)
 						onInputChange (function)
 				*/}
+        <Input name="row" value="12" placeholder="row" size="medium" label="row value" error="wrong row value" onInputChange={changeHandler} />
 
 
 				{/*

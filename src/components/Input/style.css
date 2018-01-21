@@ -1,0 +1,41 @@
+.input {
+  font-size: 18px;
+  margin: 10px;
+}
+
+.input.small {
+  font-size: 12px;
+}
+
+.input.medium {
+  font-size: 18px;
+}
+
+.input.large {
+  font-size: 24px;
+}
+
+.input input {
+  font-size: inherit;
+  padding: 5px;
+}
+
+.input.error input {
+  border-color: red;
+}
+
+.input label {
+  font-weight: bold;
+  display: block;
+}
+
+.input.error label:after {
+  color: red;
+  content: " *";
+}
+
+.input .error {
+  color: red;
+  font-size: 85%;
+  margin: 6px 0px;
+}
