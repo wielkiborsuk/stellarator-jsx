@@ -73,7 +73,6 @@ class App extends Component {
 				*/}
         <Button type="primary" onButtonClick={handleButtonClick}>hello</Button>
 
-
 				{/*
 					Component:
 						Text
