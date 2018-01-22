@@ -3,10 +3,17 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 function Input({children, type, name, placeholder, label, value, size, error, onInputChange}) {
+  let Tag = (type === 'textarea' ? 'textarea' : 'input');
   return (
     <div className={`input ${size} ${error ? 'error' : ''}`}>
       {label && <label htmlFor={name}>{label}</label>}
-      <input type={type} name={name} defaultValue={value} placeholder={placeholder} onChange={onInputChange} />
+      <Tag
+        type={type}
+        name={name}
+        defaultValue={value}
+        placeholder={placeholder}
+        onChange={onInputChange}
+      />
       {error && <p className="error">{error}</p>}
     </div>
   );

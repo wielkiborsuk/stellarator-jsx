@@ -71,7 +71,12 @@ class App extends Component {
             loadking
 						onButtonClick (function)
 				*/}
-        <Button type="primary" onButtonClick={handleButtonClick}>hello</Button>
+        <Button
+          type="primary"
+          onButtonClick={handleButtonClick}
+        >
+          hello
+        </Button>
 
 				{/*
 					Component:
@@ -81,7 +86,12 @@ class App extends Component {
 						heading (possible values: true / false - default)
 						size (possible values: small / medium - default / large)
 				*/}
-        <Text heading size='large'>find me here</Text>
+        <Text
+          heading
+          size="large"
+        >
+          find me here
+        </Text>
 
 
 
@@ -112,7 +122,26 @@ class App extends Component {
 						error (string)
 						onInputChange (function)
 				*/}
-        <Input name="row" value="12" placeholder="row" size="medium" label="row value" error="wrong row value" onInputChange={changeHandler} />
+        <Input
+          name="row"
+          value="12"
+          placeholder="row"
+          size="medium"
+          label="row value"
+          error="wrong row value"
+          onInputChange={changeHandler}
+        />
+
+        <Input
+          type="textarea"
+          name="row"
+          value="12"
+          placeholder="row"
+          size="medium"
+          label="row value"
+          error="wrong row value"
+          onInputChange={changeHandler}
+        />
 
 
 				{/*

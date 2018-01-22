@@ -9,11 +9,17 @@ class Form extends React.Component {
     super(props);
 
     this.config = props.config;
+    this.config.forEach((e, i) => {
+      e.index = i;
+    });
 
     this.state = {
       errors: {},
       edited: {},
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   validateForm() {
@@ -35,14 +41,17 @@ class Form extends React.Component {
     return !Object.keys(errors).length;
   }
 
-  handleChange = (event) => {
-    this.setState({
-      [event.currentTarget.name]: event.currentTarget.value,
-      edited: Object.assign({[event.currentTarget.name]: true}, this.state.edited)
-    }, this.validateForm);
+  handleChange(event) {
+    let name = event.currentTarget.name;
+    let value = event.currentTarget.value;
+
+    this.setState((previousState) => ({
+      [name]: value,
+      edited: Object.assign({[name]: true}, previousState.edited)
+    }), this.validateForm);
   }
 
-  handleSubmit = (event) => {
+  handleSubmit(event) {
     event.preventDefault();
 
     let edited = this.config.reduce((map, obj) => {
@@ -63,11 +72,25 @@ class Form extends React.Component {
     return (
       <div className="form">
         <form>
-          {this.config.map((field, index) => (
-            <Input name={field.name} type={field.type} value={this.state.email} placeholder={field.placeholder}
-                   label={field.label} error={this.state.errors[field.name]} onInputChange={this.handleChange} key={index} />
+          {this.config.map((field) => (
+          <Input
+            name={field.name}
+            type={field.type}
+            value={this.state.email}
+            placeholder={field.placeholder}
+            label={field.label}
+            error={this.state.errors[field.name]}
+            onInputChange={this.handleChange}
+            key={field.index}
+          />
           ))}
-          <Button disabled={!!Object.keys(this.state.errors).length} loading={this.state.pending} onButtonClick={this.handleSubmit}>Login</Button>
+          <Button
+            disabled={!!Object.keys(this.state.errors).length}
+            loading={this.state.pending}
+            onButtonClick={this.handleSubmit}
+          >
+            Login
+          </Button>
         </form>
       </div>
     )

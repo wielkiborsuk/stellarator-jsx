@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-mport './style.css';
+import './style.css';
 
 function Button({children, type, disabled, loading, onButtonClick}) {
   return (
