@@ -4,6 +4,7 @@ import Text from './components/Text';
 import Notification from './components/Notification';
 import Input from './components/Input';
 import LoginForm from './components/LoginForm';
+import Form from './components/Form';
 
 function handleButtonClick() {
   alert('button clicked');
@@ -13,6 +14,48 @@ function changeHandler(event) {
   var newValue = event.currentTarget.value;
   console.log(`updating field value to ${newValue}`);
 }
+
+var formConfig = [
+  {
+    name: 'email',
+    type: 'email',
+    placeholder: 'email address',
+    label: 'email address',
+    validate: function (value) {
+      if (!value) {
+        return 'email cannot be empty';
+      } else if (!value.match(/.+@.+/)) {
+        return 'invalid email format';
+      }
+    }
+  },
+  {
+    name: 'password',
+    type: 'password',
+    placeholder: 'password',
+    label: 'password',
+    validate: function (value) {
+      if (!value) {
+        return 'password cannot be empty';
+      } else if (value.length < 8) {
+        return 'password is too short';
+      }
+    }
+  },
+  {
+    name: 'name',
+    type: 'text',
+    placeholder: 'full name',
+    label: 'full name',
+    validate: function (value) {
+      if (!value) {
+        return 'you need to provide a full name';
+      } else if (!value.match(/[A-Za-z]+\s+[A-Za-z]+/)) {
+        return 'please provide both first and last name';
+      }
+    }
+  },
+];
 
 class App extends Component {
 	render() {
@@ -95,6 +138,7 @@ class App extends Component {
 					Props:
 						config (array of objects) - required
 				*/}
+        <Form config={formConfig} />
 
 
 			</div>
